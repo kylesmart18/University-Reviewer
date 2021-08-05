@@ -1,0 +1,47 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+
+<div class="jumbotron">
+    <div>
+        <input type="text" id="name" name="name" placeholder="Enter Search Text">
+    </div> 
+    <br>
+    <div>
+        <button class="btn btn-light" type="button" value="Submit" id="submit_button" onclick="makeApiCall()">Search</button>
+    </div> 
+</div>
+
+<div class="row" id="cards"></div>
+
+<form action="/main/getReview" method="post">
+<div class="modal" id="modal_a">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+		        <h4 class="modal-title">Add Review</h4>
+		        <span onclick="document.getElementById('modal_a').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+		    </div>
+		    <br>
+			<div class="row">
+				<div class="col-sm-4">
+					<textarea value=" " id="db_id" name="db_id" cols="20" readonly>University Name</textarea>
+					<textarea value=" " id="date" name="date" cols="20" readonly>Enter your review here:</textarea>
+				</div>
+				<br>
+				<div class="col-sm-4">
+					<textarea cols="20" id="university" name="university" readonly>h</textarea>
+					<textarea cols="20" rows="10" id="review" name="review">Enter your review here:</textarea>
+				</div>
+			</div>
+			<br>
+			<a><button type="submit" class="btn btn-primary" onclick="makeID();makeDate()">Submit</button></a>
+		</div>
+	</div>
+</div>
+<!-- <span value=" " id="db_id" name="db_id"></span>
+<span value=" " id="date" name="date"></span> -->
+</form>
+
+
+
+<%- include('../partials/footer') %>
